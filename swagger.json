@@ -1,0 +1,1885 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+       "title": "Typec_Cass Apis",
+       "description": "Cassandra service",
+       "version": "1.0.0"
+    },
+    "produces": ["application/json"],
+    "components": {
+       "securitySchemes": {
+          "JWT": {
+             "type": "apiKey",
+             "name": "api-access-token",
+             "in": "header",
+             "description": "Jwt authentication to access P2P service"
+          }
+       }
+    },
+    "security": [
+       {
+          "JWT": []
+       }
+    ],
+    "paths": {
+       "/api/typec/user/signup": {
+          "post": {
+             "tags": ["NFT Batch"],
+             "summary": "Batch burn",
+             "requestBody": {
+                "description": "",
+                "required": true,
+                "content": {
+                   "application/json": {
+                      "schema": {
+                         "type": "object",
+                         "properties": {
+                            "tokenId": {
+                               "type": "string"
+                            },
+                            "value": {
+                               "type": "number"
+                            },
+                            "mnemonics":{
+                               "type":"string"
+                            }
+                         }
+                      }
+                   }
+                }
+             },
+             "responses": {
+                "200": {
+                   "description": "burn Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               },
+                               "data": {
+                                  "type": "object"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/batch/safeBatchTransferFrom": {
+          "post": {
+             "tags": ["NFT Batch"],
+             "summary": "Batch safeBatchTransferFrom",
+             "requestBody": {
+                "description": "",
+                "required": true,
+                "content": {
+                   "application/json": {
+                      "schema": {
+                         "type": "object",
+                         "properties": {
+                            "from": {
+                               "type": "string"
+                            },
+                            "to": {
+                               "type": "string"
+                            },
+                            "tokenIds": {
+                               "type": "string"
+                            },
+                            "values": {
+                               "type": "number"
+                            },
+                            "mnemonics": {
+                               "type": "string"
+                            },
+                            "data": {
+                               "type": "string"
+                            }
+                         }
+                      }
+                   }
+                }
+             },
+             "responses": {
+                "200": {
+                   "description": "Batch safeBatchTransferFrom Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               },
+                               "data": {
+                                  "type": "object"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+ 
+       "/api/peer/contract/batch/safeTransferFrom": {
+          "post": {
+             "tags": ["NFT Batch"],
+             "summary": "Batch safeTransferFrom",
+             "requestBody": {
+                "description": "",
+                "required": true,
+                "content": {
+                   "application/json": {
+                      "schema": {
+                         "type": "object",
+                         "properties": {
+                            "from": {
+                               "type": "string"
+                            },
+                            "to": {
+                               "type": "string"
+                            },
+                            "tokenId": {
+                               "type": "string"
+                            },
+                            "value": {
+                               "type": "number"
+                            },
+                            "mnemonics": {
+                               "type": "string"
+                            },
+                            "data": {
+                               "type": "string"
+                            }
+                         }
+                      }
+                   }
+                }
+             },
+             "responses": {
+                "200": {
+                   "description": "Batch safeTransferFrom Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               },
+                               "data": {
+                                  "type": "object"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+ 
+       "/api/peer/contract/batch/setApprovalForAll": {
+          "post": {
+             "tags": ["NFT Batch"],
+             "summary": "Btach setApprovalForAll",
+             "requestBody": {
+                "description": "",
+                "required": true,
+                "content": {
+                   "application/json": {
+                      "schema": {
+                         "type": "object",
+                         "properties": {
+                            "operator": {
+                               "type": "string"
+                            },
+                            "approved": {
+                               "type": "boolean"
+                            },
+                            "mnemonics": {
+                               "type": "string"
+                            }
+                         }
+                      }
+                   }
+                }
+             },
+             "responses": {
+                "200": {
+                   "description": "Batch setApprovalForAll Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               },
+                               "data": {
+                                  "type": "object"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+ 
+       "/api/peer/contract/batch/onBatchReceived": {
+          "post": {
+             "tags": ["NFT Batch"],
+             "summary": "Batch onBatchReceived",
+             "requestBody": {
+                "description": "",
+                "required": true,
+                "content": {
+                   "application/json": {
+                      "schema": {
+                         "type": "object",
+                         "properties": {
+                            "operator": {
+                               "type": "string"
+                            },
+                            "from": {
+                               "type": "string"
+                            },
+                            "tokenIds": {
+                               "type": "string"
+                            },
+                            "values": {
+                               "type": "number"
+                            },
+                            "data": {
+                               "type": "string"
+                            },
+                            "mnemonics":{
+                               "type": "string"
+                            }
+                         }
+                      }
+                   }
+                }
+             },
+             "responses": {
+                "200": {
+                   "description": "Batch onBatchReceived Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               },
+                               "data": {
+                                  "type": "object"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+ 
+       "/api/peer/contract/batch/onTokenReceived": {
+          "post": {
+             "tags": ["NFT Batch"],
+             "summary": "Batch onTokenReceived",
+             "requestBody": {
+                "description": "",
+                "required": true,
+                "content": {
+                   "application/json": {
+                      "schema": {
+                         "type": "object",
+                         "properties": {
+                            "operator": {
+                               "type": "string"
+                            },
+                            "from": {
+                               "type": "string"
+                            },
+                            "tokenId": {
+                               "type": "string"
+                            },
+                            "value": {
+                               "type": "number"
+                            },
+                            "data": {
+                               "type": "string"
+                            },
+                            "mnemonics":{
+                               "type": "string"
+                            }
+                         }
+                      }
+                   }
+                }
+             },
+             "responses": {
+                "200": {
+                   "description": "Batch onTokenReceived Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               },
+                               "data": {
+                                  "type": "object"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/batch/balanceOfBatch": {
+          "post": {
+             "tags": ["NFT Batch"],
+             "summary": "Batch balanceOfBatch",
+             "requestBody": {
+                "description": "",
+                "required": true,
+                "content": {
+                   "application/json": {
+                      "schema": {
+                         "type": "object",
+                         "properties": {
+                            "owners": {
+                               "type": "string"
+                            },
+                            "tokenIds": {
+                               "type": "string"
+                            }
+                         }
+                      }
+                   }
+                }
+             },
+             "responses": {
+                "200": {
+                   "description": "Batch balanceOfBatch Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               },
+                               "data": {
+                                  "type": "object"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/batch/mint": {
+          "post": {
+             "tags": ["NFT Batch"],
+             "summary": "Batch Mint",
+             "requestBody": {
+                "description": "",
+                "required": true,
+                "content": {
+                   "application/json": {
+                      "schema": {
+                         "type": "object",
+                         "properties": {
+                            "uri": {
+                               "type": "string"
+                            },
+                            "value": {
+                               "type": "number"
+                            },
+                            "mnemonics":{
+                               "type":"string"
+                            }
+                         }
+                      }
+                   }
+                }
+             },
+             "responses": {
+                "200": {
+                   "description": "Batch Mint Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               },
+                               "data": {
+                                  "type": "object"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/batch/balanceOf/{owner}/{tokenId}": {
+          "get": {
+             "tags": ["NFT Batch"],
+             "summary": "Get balanceOf",
+             "parameters": [
+                {
+                   "in": "path",
+                   "name": "owner",
+                   "schema": {
+                      "type": "string"
+                   }
+                },
+                {
+                   "in": "path",
+                   "name": "tokenId",
+                   "schema": {
+                      "type": "number"
+                   }
+                }
+             ],
+             "responses": {
+                "200": {
+                   "description": "balanceOf Fetched Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/batch/isApprovedForAll/{owner}/{operator}": {
+          "get": {
+             "tags": ["NFT Batch"],
+             "summary": "Get isApprovedForAll",
+             "parameters": [
+                {
+                   "in": "path",
+                   "name": "owner",
+                   "schema": {
+                      "type": "string"
+                   }
+                },
+                {
+                   "in": "path",
+                   "name": "operator",
+                   "schema": {
+                      "type": "string"
+                   }
+                }
+             ],
+             "responses": {
+                "200": {
+                   "description": "isApprovedForAll Fetched Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/single/mint": {
+          "post": {
+             "tags": ["NFT Single"],
+             "summary": "Single Mint",
+             "requestBody": {
+                "description": "",
+                "required": true,
+                "content": {
+                   "application/json": {
+                      "schema": {
+                         "type": "object",
+                         "properties": {
+                            "uri": {
+                               "type": "string"
+                            },
+                            "location": {
+                               "type": "string"
+                            },
+                            "mnemonics":{
+                               "type":"string"
+                            }
+                         }
+                      }
+                   }
+                }
+             },
+             "responses": {
+                "200": {
+                   "description": "Mint Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               },
+                               "data": {
+                                  "type": "object"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/single/redeem": {
+          "post": {
+             "tags": ["NFT Single"],
+             "summary": "Single Redeem",
+             "requestBody": {
+                "description": "",
+                "required": true,
+                "content": {
+                   "application/json": {
+                      "schema": {
+                         "type": "object",
+                         "properties": {
+                            "creator": {
+                               "type": "string"
+                            },
+                            "uri": {
+                               "type": "string"
+                            },
+                            "location": {
+                               "type": "string"
+                            },
+                            "owner": {
+                               "type": "string"
+                            },
+                            "mnemonics":{
+                               "type":"string"
+                            }
+                         }
+                      }
+                   }
+                }
+             },
+             "responses": {
+                "200": {
+                   "description": "Redeem Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               },
+                               "data": {
+                                  "type": "object"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/single/burn": {
+          "post": {
+             "tags": ["NFT Single"],
+             "summary": "Single burn",
+             "requestBody": {
+                "description": "",
+                "required": true,
+                "content": {
+                   "application/json": {
+                      "schema": {
+                         "type": "object",
+                         "properties": {
+                            "tokenId": {
+                               "type": "string"
+                            },
+                            "mnemonics":{
+                               "type":"string"
+                            }
+                         }
+                      }
+                   }
+                }
+             },
+             "responses": {
+                "200": {
+                   "description": "burn Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               },
+                               "data": {
+                                  "type": "object"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/single/updateManager": {
+          "post": {
+             "tags": ["NFT Single"],
+             "summary": "update manager",
+             "requestBody": {
+                "description": "",
+                "required": true,
+                "content": {
+                   "application/json": {
+                      "schema": {
+                         "type": "object",
+                         "properties": {
+                            "manager": {
+                               "type": "string"
+                            },
+                            "mnemonics":{
+                               "type":"string"
+                            }
+                         }
+                      }
+                   }
+                }
+             },
+             "responses": {
+                "200": {
+                   "description": "manager update Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               },
+                               "data": {
+                                  "type": "object"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/single/giveMe": {
+          "post": {
+             "tags": ["NFT Single"],
+             "summary": "update giveMe",
+             "requestBody": {
+                "description": "",
+                "required": true,
+                "content": {
+                   "application/json": {
+                      "schema": {
+                         "type": "object",
+                         "properties": {
+                            "transferTo": {
+                               "type": "string"
+                            },
+                            "value": {
+                               "type": "number"
+                            },
+                            "mnemonics":{
+                               "type":"string"
+                            }
+                         }
+                      }
+                   }
+                }
+             },
+             "responses": {
+                "200": {
+                   "description": "Balance update Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               },
+                               "data": {
+                                  "type": "object"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/single/currentManager": {
+          "get": {
+             "tags": ["NFT Single"],
+             "summary": "Get current manger ",
+             "responses": {
+                "200": {
+                   "description": "current manager Fetched Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/single/admin": {
+          "get": {
+             "tags": ["NFT Single"],
+             "summary": "Get admin",
+             "responses": {
+                "200": {
+                   "description": "admin Fetched Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/single/transfer": {
+          "post": {
+             "tags": ["NFT Single"],
+             "summary": "Single transfer",
+             "requestBody": {
+                "description": "",
+                "required": true,
+                "content": {
+                   "application/json": {
+                      "schema": {
+                         "type": "object",
+                         "properties": {
+                            "toAccount": {
+                               "type": "string"
+                            },
+                            "tokenId": {
+                               "type": "string"
+                            },
+                            "newLocation": {
+                               "type": "string"
+                            },
+                            "mnemonics": {
+                               "type": "string"
+                            }
+                         }
+                      }
+                   }
+                }
+             },
+             "responses": {
+                "200": {
+                   "description": "single transfer Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               },
+                               "data": {
+                                  "type": "object"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/single/transferFrom": {
+          "post": {
+             "tags": ["NFT Single"],
+             "summary": "Single transferFrom",
+             "requestBody": {
+                "description": "",
+                "required": true,
+                "content": {
+                   "application/json": {
+                      "schema": {
+                         "type": "object",
+                         "properties": {
+                            "from": {
+                               "type": "string"
+                            },
+                            "toAccount":{
+                               "type":"string"
+                            },
+                            "tokenId": {
+                               "type": "string"
+                            },
+                            "newLocation": {
+                               "type": "string"
+                            },
+                            "mnemonics": {
+                               "type": "string"
+                            }
+                         }
+                      }
+                   }
+                }
+             },
+             "responses": {
+                "200": {
+                   "description": "single transferFrom Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/single/approve": {
+          "post": {
+             "tags": ["NFT Single"],
+             "summary": "Single approve",
+             "requestBody": {
+                "description": "",
+                "required": true,
+                "content": {
+                   "application/json": {
+                      "schema": {
+                         "type": "object",
+                         "properties": {
+                            "toAccount": {
+                               "type": "string"
+                            },
+                            "tokenId": {
+                               "type": "string"
+                            },
+                            "mnemonics": {
+                               "type": "string"
+                            }
+                         }
+                      }
+                   }
+                }
+             },
+             "responses": {
+                "200": {
+                   "description": "single approve Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               },
+                               "data": {
+                                  "type": "object"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/single/setApprovalForAll": {
+          "post": {
+             "tags": ["NFT Single"],
+             "summary": "Single setApprovalForAll",
+             "requestBody": {
+                "description": "",
+                "required": true,
+                "content": {
+                   "application/json": {
+                      "schema": {
+                         "type": "object",
+                         "properties": {
+                            "toAccount": {
+                               "type": "string"
+                            },
+                            "approved": {
+                               "type": "boolean"
+                            },
+                            "mnemonics": {
+                               "type": "string"
+                            }
+                         }
+                      }
+                   }
+                }
+             },
+             "responses": {
+                "200": {
+                   "description": "single setApprovalForAll Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               },
+                               "data": {
+                                  "type": "object"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/single/isApprovedForAll/{owner}/{operator}": {
+          "get": {
+             "tags": ["NFT Single"],
+             "summary": "Get isApprovedForAll",
+             "parameters": [
+                {
+                   "in": "path",
+                   "name": "owner",
+                   "schema": {
+                      "type": "string"
+                   }
+                },
+                {
+                   "in": "path",
+                   "name": "operator",
+                   "schema": {
+                      "type": "string"
+                   }
+                }
+             ],
+             "responses": {
+                "200": {
+                   "description": "isApprovedForAll Fetched Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/single/balanceOf/{owner}": {
+          "get": {
+             "tags": ["NFT Single"],
+             "summary": "Get balanceOf",
+             "parameters": [
+                {
+                   "in": "path",
+                   "name": "owner",
+                   "schema": {
+                      "type": "string"
+                   }
+                }
+             ],
+             "responses": {
+                "200": {
+                   "description": "balanceOf Fetched Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/single/getApproved/{tokenId}": {
+          "get": {
+             "tags": ["NFT Single"],
+             "summary": "Get getApproved",
+             "parameters": [
+                {
+                   "in": "path",
+                   "name": "tokenId",
+                   "schema": {
+                      "type": "string"
+                   }
+                }
+             ],
+             "responses": {
+                "200": {
+                   "description": "getApproved Fetched Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/single/getLocation/{tokenId}": {
+          "get": {
+             "tags": ["NFT Single"],
+             "summary": "Get getLocation",
+             "parameters": [
+                {
+                   "in": "path",
+                   "name": "tokenId",
+                   "schema": {
+                      "type": "string"
+                   }
+                }
+             ],
+             "responses": {
+                "200": {
+                   "description": "getLocation Fetched Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/single/getUri/{tokenId}": {
+          "get": {
+             "tags": ["NFT Single"],
+             "summary": "Get getUri",
+             "parameters": [
+                {
+                   "in": "path",
+                   "name": "tokenId",
+                   "schema": {
+                      "type": "string"
+                   }
+                }
+             ],
+             "responses": {
+                "200": {
+                   "description": "getUri Fetched Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/single/ownerOf/{tokenId}": {
+          "get": {
+             "tags": ["NFT Single"],
+             "summary": "Get ownerOf",
+             "parameters": [
+                {
+                   "in": "path",
+                   "name": "tokenId",
+                   "schema": {
+                      "type": "string"
+                   }
+                }
+             ],
+             "responses": {
+                "200": {
+                   "description": "ownerOf Fetched Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/voucher/redeem": {
+          "post": {
+             "tags": ["NFT Voucher"],
+             "summary": "redeem",
+             "requestBody": {
+                "description": "",
+                "required": true,
+                "content": {
+                   "application/json": {
+                      "schema": {
+                         "type": "object",
+                         "properties": {
+                            "owner": {
+                               "type": "string"
+                            },
+                            "tokenId": {
+                               "type": "number"
+                            },
+                            "maxSupply": {
+                               "type": "number"
+                            },
+                            "amount": {
+                               "type": "number"
+                            },
+                            "uri": {
+                               "type": "string"
+                            },
+                            "redeemer": {
+                               "type": "string"
+                            },
+                            "mnemonics":{
+                               "type":"string"
+                            }
+                         }
+                      }
+                   }
+                }
+             },
+             "responses": {
+                "200": {
+                   "description": "Redeemed Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               },
+                               "data": {
+                                  "type": "object"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/voucher/burn": {
+          "post": {
+             "tags": ["NFT Voucher"],
+             "summary": "voucher burn",
+             "requestBody": {
+                "description": "",
+                "required": true,
+                "content": {
+                   "application/json": {
+                      "schema": {
+                         "type": "object",
+                         "properties": {
+                            "tokenId": {
+                               "type": "number"
+                            },
+                            "value": {
+                               "type": "number"
+                            },
+                            "mnemonics":{
+                               "type":"string"
+                            }
+                         }
+                      }
+                   }
+                }
+             },
+             "responses": {
+                "200": {
+                   "description": "burn Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               },
+                               "data": {
+                                  "type": "object"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/voucher/safeBatchTransferFrom": {
+          "post": {
+             "tags": ["NFT Voucher"],
+             "summary": "Voucher safeBatchTransferFrom",
+             "requestBody": {
+                "description": "",
+                "required": true,
+                "content": {
+                   "application/json": {
+                      "schema": {
+                         "type": "object",
+                         "properties": {
+                            "from": {
+                               "type": "string"
+                            },
+                            "to": {
+                               "type": "string"
+                            },
+                            "tokenIds": {
+                               "type": "number"
+                            },
+                            "values": {
+                               "type": "number"
+                            },
+                            "mnemonics": {
+                               "type": "string"
+                            },
+                            "data": {
+                               "type": "string"
+                            }
+                         }
+                      }
+                   }
+                }
+             },
+             "responses": {
+                "200": {
+                   "description": "Voucher safeBatchTransferFrom Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               },
+                               "data": {
+                                  "type": "object"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/voucher/batchTranferToMany": {
+          "post": {
+             "tags": ["NFT Voucher"],
+             "summary": "Voucher batchTranferToMany",
+             "requestBody": {
+                "description": "",
+                "required": true,
+                "content": {
+                   "application/json": {
+                      "schema": {
+                         "type": "object",
+                         "properties": {
+                            "from": {
+                               "type": "string"
+                            },
+                            "toAccounts": {
+                               "type": "string"
+                            },
+                            "tokenId": {
+                               "type": "number"
+                            },
+                            "amounts": {
+                               "type": "number"
+                            },
+                            "mnemonics": {
+                               "type": "string"
+                            }
+                         }
+                      }
+                   }
+                }
+             },
+             "responses": {
+                "200": {
+                   "description": "Voucher batchTranferToMany Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               },
+                               "data": {
+                                  "type": "object"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/voucher/safeTransferFrom": {
+          "post": {
+             "tags": ["NFT Voucher"],
+             "summary": "Voucher safeTransferFrom",
+             "requestBody": {
+                "description": "",
+                "required": true,
+                "content": {
+                   "application/json": {
+                      "schema": {
+                         "type": "object",
+                         "properties": {
+                            "from": {
+                               "type": "string"
+                            },
+                            "to": {
+                               "type": "string"
+                            },
+                            "tokenId": {
+                               "type": "number"
+                            },
+                            "value": {
+                               "type": "number"
+                            },
+                            "data": {
+                               "type": "string"
+                            },
+                            "mnemonics": {
+                               "type": "string"
+                            }
+                            
+                         }
+                      }
+                   }
+                }
+             },
+             "responses": {
+                "200": {
+                   "description": "Voucher safeTransferFrom Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               },
+                               "data": {
+                                  "type": "object"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/voucher/setApprovalForAll": {
+          "post": {
+             "tags": ["NFT Voucher"],
+             "summary": "Voucher setApprovalForAll",
+             "requestBody": {
+                "description": "",
+                "required": true,
+                "content": {
+                   "application/json": {
+                      "schema": {
+                         "type": "object",
+                         "properties": {
+                            "operator": {
+                               "type": "string"
+                            },
+                            "approved": {
+                               "type": "boolean"
+                            },
+                            "mnemonics": {
+                               "type": "string"
+                            }
+                         }
+                      }
+                   }
+                }
+             },
+             "responses": {
+                "200": {
+                   "description": "voucher setApprovalForAll Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               },
+                               "data": {
+                                  "type": "object"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/voucher/onBatchReceived": {
+          "post": {
+             "tags": ["NFT Voucher"],
+             "summary": "Voucher onBatchReceived",
+             "requestBody": {
+                "description": "",
+                "required": true,
+                "content": {
+                   "application/json": {
+                      "schema": {
+                         "type": "object",
+                         "properties": {
+                            "operator": {
+                               "type": "string"
+                            },
+                            "from": {
+                               "type": "string"
+                            },
+                            "tokenIds": {
+                               "type": "number"
+                            },
+                            "values": {
+                               "type": "number"
+                            },
+                            "data": {
+                               "type": "string"
+                            },
+                            "mnemonics":{
+                               "type": "string"
+                            }
+                         }
+                      }
+                   }
+                }
+             },
+             "responses": {
+                "200": {
+                   "description": "Voucher onBatchReceived Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               },
+                               "data": {
+                                  "type": "object"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/voucher/onReceived": {
+          "post": {
+             "tags": ["NFT Voucher"],
+             "summary": "Voucher onTokenReceived",
+             "requestBody": {
+                "description": "",
+                "required": true,
+                "content": {
+                   "application/json": {
+                      "schema": {
+                         "type": "object",
+                         "properties": {
+                            "operator": {
+                               "type": "string"
+                            },
+                            "from": {
+                               "type": "string"
+                            },
+                            "tokenId": {
+                               "type": "number"
+                            },
+                            "value": {
+                               "type": "number"
+                            },
+                            "data": {
+                               "type": "string"
+                            },
+                            "mnemonics":{
+                               "type": "string"
+                            }
+                         }
+                      }
+                   }
+                }
+             },
+             "responses": {
+                "200": {
+                   "description": "Voucher onTokenReceived Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               },
+                               "data": {
+                                  "type": "object"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/voucher/balanceOfBatch": {
+          "post": {
+             "tags": ["NFT Voucher"],
+             "summary": "Voucher balanceOfBatch",
+             "requestBody": {
+                "description": "",
+                "required": true,
+                "content": {
+                   "application/json": {
+                      "schema": {
+                         "type": "object",
+                         "properties": {
+                            "owners": {
+                               "type": "string"
+                            },
+                            "tokenIds": {
+                               "type": "string"
+                            }
+                         }
+                      }
+                   }
+                }
+             },
+             "responses": {
+                "200": {
+                   "description": "Voucher balanceOfBatch Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               },
+                               "data": {
+                                  "type": "object"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/voucher/balanceOf/{owner}/{tokenId}": {
+          "get": {
+             "tags": ["NFT Voucher"],
+             "summary": "Get balanceOf",
+             "parameters": [
+                {
+                   "in": "path",
+                   "name": "owner",
+                   "schema": {
+                      "type": "string"
+                   }
+                },
+                {
+                   "in": "path",
+                   "name": "tokenId",
+                   "schema": {
+                      "type": "number"
+                   }
+                }
+             ],
+             "responses": {
+                "200": {
+                   "description": "balanceOf Fetched Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       },
+       "/api/peer/contract/voucher/isApprovedForAll/{owner}/{operator}": {
+          "get": {
+             "tags": ["NFT Voucher"],
+             "summary": "Get isApprovedForAll",
+             "parameters": [
+                {
+                   "in": "path",
+                   "name": "owner",
+                   "schema": {
+                      "type": "string"
+                   }
+                },
+                {
+                   "in": "path",
+                   "name": "operator",
+                   "schema": {
+                      "type": "string"
+                   }
+                }
+             ],
+             "responses": {
+                "200": {
+                   "description": "isApprovedForAll Fetched Successfully",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "properties": {
+                               "message": {
+                                  "type": "string"
+                               }
+                            }
+                         }
+                      }
+                   }
+                },
+                "400": {
+                   "description": "Oops! Something went wrong. Please try again."
+                }
+             }
+          }
+       }
+    }
+ }
+ 
