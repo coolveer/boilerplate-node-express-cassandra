@@ -49,7 +49,7 @@ class App {
       this.app.use(
          '/api/typec/swagger',
          swaggerUi.serve,
-         swaggerUi.setup(swaggerDocument)
+         //swaggerUi.setup(swaggerDocument)
       );
     }
 
