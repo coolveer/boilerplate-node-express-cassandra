@@ -1,5 +1,5 @@
 exports.STATUS = {
-    SUCCESS: 200,
+   SUCCESS: 200,
    CREATED: 201,
    ACCEPTED: 202,
    NOCONTENT: 204,
@@ -13,10 +13,10 @@ exports.STATUS = {
    BADGATEWAYS: 502,
    SERVICEUNAVILABLE: 503,
    GATEWAYTIMEOUT: 504,
-}
+};
 
 exports.RES_MSG = {
-    CREATEUSER: 'User created succesfully',
+   CREATEUSER: 'User created succesfully',
    LOGSUCCESS: 'User successfully logged in',
    USEREXIST: 'User already exist',
    INVALIDLOG: 'Email/password is invalid',
@@ -51,7 +51,7 @@ exports.RES_MSG = {
    DISPETCHFETCH: 'Dispetch Fetched Successfully',
    BALANCETRANSFERED: 'Balance Transfered Successfully',
    EXCEEDSBALANCE:
-     'We could not transferred balance because you already have balance',
+      'We could not transferred balance because you already have balance',
    TRANSACTIONFETCH: 'Transaction fetch Successfully',
    BLOCKTRANSACTIONFETCH: 'Block transactions fetched Successfully',
    APPROVEDFETCH: 'Approved Fetch Successfully',
@@ -89,10 +89,10 @@ exports.RES_MSG = {
    MANAGER: 'Invalid  Manager',
    ADMIN: 'Manager Will Be Updated By Admin Only',
    HIGHAMOUNT: 'Amount is grater than maxSupply',
-}
+};
 
 exports.MIDDLEWARE_RESPONSE = {
-    JWTERROR: 'Unauthorize Request',
-    PERMISSION_DENIED: 'Permission denied for this user.',
-    ONLY_LOGIN_WORKS: 'The feature is temporarily disabled.',
-  };
+   JWTERROR: 'Unauthorize Request',
+   PERMISSION_DENIED: 'Permission denied for this user.',
+   ONLY_LOGIN_WORKS: 'The feature is temporarily disabled.',
+};
