@@ -4,6 +4,7 @@
   "description": "",
   "main": "prettier.config.js",
   "scripts": {
+    "set":"npm install && npm run prepare",
     "dev": "nodemon ./src/server.ts",
     "start": "ts-node ./src/server.ts",
     "prepare": "is-ci || husky install",
