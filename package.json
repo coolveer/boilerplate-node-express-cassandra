@@ -4,7 +4,7 @@
   "description": "",
   "main": "prettier.config.js",
   "scripts": {
-    "set":"npm install && npm run prepare",
+    "set": "npm install && npm run prepare",
     "dev": "nodemon ./src/server.ts",
     "start": "ts-node ./src/server.ts",
     "prepare": "is-ci || husky install",
@@ -20,7 +20,7 @@
       "post-applypatch": "echo \"[Husky] post-applypatch\"",
       "pre-commit": "echo \"[Husky] pre-commit\""
     }
-  }, 
+  },
   "keywords": [],
   "author": "Malay Srivastava",
   "license": "ISC",
@@ -50,6 +50,7 @@
     "reflect-metadata": "^0.1.13",
     "sequelize": "^6.29.3",
     "sequelize-typescript": "^2.1.5",
+    "set": "^1.1.1",
     "swagger-ui-express": "^4.6.2",
     "ts-node": "^10.9.1"
   },
