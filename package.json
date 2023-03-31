@@ -21,7 +21,7 @@
     }
   }, 
   "keywords": [],
-  "author": "",
+  "author": "Malay Srivastava",
   "license": "ISC",
   "dependencies": {
     "@polkadot/api": "^10.1.4",
